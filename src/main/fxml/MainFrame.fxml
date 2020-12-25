@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.MainFrameController">
+   <children>
+      <BorderPane fx:id="mainBorderPane" layoutX="-1.0" layoutY="228.0" prefHeight="650.0" prefWidth="1156.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane fx:id="titlePane" style="-fx-background-color: #383838;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView layoutX="-7.0" layoutY="-2.0" onMouseEntered="#handleCloseEntered" onMouseExited="#handleCloseExited" onMousePressed="#handleClosePressed" pickOnBounds="true" preserveRatio="true" scaleX="0.7" scaleY="0.7" scaleZ="0.7" x="1080.0" y="5.0">
+                     <image>
+                        <Image url="@../images/close.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="507.0" layoutY="2.0" style="-fx-font-weight: bold;" text="Essence" textAlignment="CENTER" textFill="#00d8ff">
+                     <font>
+                        <Font name="Titillium Web ExtraLight" size="25.0" />
+                     </font>
+                  </Label>
+                  <ImageView layoutX="5.0" layoutY="12.0" onMouseEntered="#handleMinimizeEntered" onMouseExited="#handleMinimizeExited" onMousePressed="#handleMinimizePressed" pickOnBounds="true" preserveRatio="true" scaleX="0.8" scaleY="0.9" scaleZ="0.9" x="1040.0" y="-9.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@../images/minus.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="searchBar" layoutX="858.0" layoutY="12.0" maxHeight="1000.0" minHeight="22.0" onKeyPressed="#handleSearchBarPressed" prefHeight="0.0" prefWidth="130.0" promptText="Search" style="-fx-prompt-text-fill: #FFFFFF;">
+                     <font>
+                        <Font name="Helvetica" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets left="25.0" />
+                     </padding>
+                  </TextField>
+                  <ImageView layoutX="846.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" scaleX="0.35" scaleY="0.35" scaleZ="0.35">
+                     <image>
+                        <Image url="@../images/search.png" />
+                     </image>
+                  </ImageView>
+                  <ButtonBar layoutX="207.0" layoutY="4.0" prefHeight="40.0" prefWidth="200.0" />
+                  <Button fx:id="libraryButton" layoutX="28.0" layoutY="13.0" minHeight="26.0" minWidth="60.0" mnemonicParsing="false" onMousePressed="#handleLibraryButtonPressed" text="Library">
+                     <font>
+                        <Font name="Helvetica" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="browseButton" layoutX="110.0" layoutY="13.0" minHeight="26.0" minWidth="60.0" mnemonicParsing="false" onMousePressed="#handleBrowseButtonPressed" text="Browse">
+                     <font>
+                        <Font name="Helvetica" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="chartButton" layoutX="195.0" layoutY="13.0" maxWidth="200.0" minHeight="26.0" minWidth="60.0" mnemonicParsing="false" onMousePressed="#handleChartsButtonPressed" text="Charts">
+                     <font>
+                        <Font name="Helvetica" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </top>
+         <bottom>
+            <Pane fx:id="pane1" prefHeight="78.0" prefWidth="1100.0" style="-fx-background-color: #383838;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="playToggle" layoutX="526.0" layoutY="3.0" onMousePressed="#handlePlayTogglePressed" pickOnBounds="true" preserveRatio="true" scaleX="0.75" scaleY="0.75" scaleZ="0.75">
+                     <image>
+                        <Image url="@../images/play.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView layoutX="570.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" scaleX="0.45" scaleY="0.45" scaleZ="0.45">
+                     <image>
+                        <Image url="@../images/fast_forward.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView layoutX="481.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" scaleX="0.45" scaleY="0.45" scaleZ="0.45">
+                     <image>
+                        <Image url="@../images/rewind.png" />
+                     </image>
+                  </ImageView>
+                  <Rectangle fx:id="seekBar" arcHeight="5.0" arcWidth="5.0" fill="#222222" height="4.5" layoutX="375.0" layoutY="58.0" onMousePressed="#handleSeekBarPressed" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="350.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Rectangle fx:id="seekBarProgress" arcHeight="5.0" arcWidth="5.0" fill="#00d8ff" height="5.0" layoutX="374.6" layoutY="58.0" onMousePressed="#handleSeekBarProgressPressed" stroke="#00d8ff" strokeType="INSIDE" strokeWidth="0.0" width="80.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Rectangle>
+                  <Label fx:id="trackCurrentPositionLabel" layoutX="340.0" layoutY="52.0" text="0:00" textFill="#fbfafa">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="trackLengthLabel" layoutX="736.0" layoutY="52.0" prefWidth="50.0" text="0:00" textFill="#fbfafa">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="albumCoverImage" fitHeight="55.0" fitWidth="55.0" layoutX="11.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 20;">
+                     <image>
+                        <Image url="@../images/album_cover.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="trackNameLabel" layoutX="80.0" layoutY="19.0" text="Track Name" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica‭ ‬עבה" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="trackArtistNameLabel" layoutX="80.0" layoutY="43.0" text="Artist" textFill="#c8c8c8">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Slider fx:id="volumeBar" blockIncrement="0.05" centerShape="false" layoutX="1002.0" layoutY="31.0" max="1.0" minWidth="-Infinity" onMousePressed="#handleVolumePressed" prefHeight="14.0" prefWidth="85.0" style="-fx-control-inner-background: #222222; -fx-padding: 0;" value="0.2">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Slider>
+                  <ImageView layoutX="976.0" layoutY="26.0" onMousePressed="#handleVolumeIconPressed" pickOnBounds="true" preserveRatio="true" scaleX="0.75" scaleY="0.75" scaleZ="0.75">
+                     <image>
+                        <Image url="@../images/volume.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,57 @@
+.progress-bar > .bar {
+    -fx-accent: #00badc;
+    -fx-background-color: linear-gradient(
+        from 0px .75em to .75em 0px,
+        repeat,
+        -fx-accent 0%,
+        -fx-accent 49%,
+        derive(-fx-accent, 30%) 50%,
+        derive(-fx-accent, 30%) 99%
+        );
+}
+
+.slider {
+    -fx-background-color: #222222;
+    -fx-background-color: linear-gradient(to right, #00d8ff 20%, #222222 20%);
+    -fx-pref-height:15;
+    -fx-background-radius: 0;
+    -fx-background-insets: 6 0 6 0;
+}
+
+.slider .track {
+    -fx-background-color: transparent;
+}
+
+.slider .thumb {
+    -fx-background-color:  #FFFFFF;
+    -fx-background-radius: 20;
+}
+
+.text-field {
+   -fx-text-fill: white;
+  -fx-prompt-text-fill: white;
+  -fx-border-radius: 9;
+  -fx-background-radius: 9;
+  -fx-background-color:   #222222;
+  -fx-background-insets: -0.2, 1, -1.4, 3;
+  -fx-padding: 3.5 7 4 25 ;
+  -fx-prompt-text-fill: derive(-fx-control-inner-background,-30%);
+ }
+
+ .text-field:focused {
+   -fx-text-fill: white;
+  -fx-prompt-text-fill: white;
+  -fx-background-color:   #222222;
+  -fx-background-insets: -0.2, 1, -1.4, 3;
+  -fx-border-radius: 9;
+  -fx-padding: 3.5 7 4 25 ;
+ }
+
+.button {
+-fx-background-color: #222222;
+-fx-background-radius: 12px;
+-fx-text-fill: #ffffff;
+-fx-border-radius: 12px;
+     -fx-border-color: #00d8ff;
+
+}
